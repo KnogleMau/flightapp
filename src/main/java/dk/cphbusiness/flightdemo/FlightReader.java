@@ -1,6 +1,7 @@
 package dk.cphbusiness.flightdemo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dk.cphbusiness.flightdemo.dtos.AirlineDTO;
 import dk.cphbusiness.flightdemo.dtos.FlightDTO;
 import dk.cphbusiness.flightdemo.dtos.FlightInfoDTO;
 import dk.cphbusiness.utils.Utils;
@@ -22,7 +23,7 @@ public class FlightReader {
         try {
             List<FlightDTO> flightList = getFlightsFromFile("flights.json");
             List<FlightInfoDTO> flightInfoDTOList = getFlightInfoDetails(flightList);
-            flightInfoDTOList.forEach(System.out::println);
+            //flightInfoDTOList.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,5 +64,6 @@ public class FlightReader {
         .toList();
         return flightInfoList;
     }
+
 
 }
